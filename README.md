@@ -91,3 +91,33 @@ Table de routage
 
 La table de routage stocke les différentes destinations de tous les réseaux auxquels appartient l'appareil.<br>
 Dans notre projet, la table de routage comprend la `destination` et le prochain noeud (`next hop`).<br>
+La `destination` correspond à l'adresse du réseau auquel les données sont envoyées, à laquelle s'ajoute le RIDC de ce réseau.<br>
+Si l'on ne souhaite pas spécifié de destination, il suffit de mettre `default` ou `0.0.0.0/0`.<br>
+Le prochain noeud est l'adresse du routeur auquel les données sont envoyées afin d'atteindre le réseau de destination.
+
+Reseau
+======
+
+Afin d'avoir un réseau fonctionnel, il faut combiner tous les points précédents.<br>
+S'il doit y avoir une connexion fonctionnelle dans un réseau, les appareils doivent d'une manière ou d'une autre être connectés, soit directement soit indirectement grâce aux routeurs.
+
+Comment savoir si deux appareils appartiennent au même réseau ?
+------
+
+Il faut combiner l'adresse IP et le masque de chacun des appareils afin d'obtenir l'adresse du réseau, en procédant à opération bit par bit/AND.
+
+Dans un premier temps, on traduit l'adresse IP et le masque en binaire :
+
+- IP : `192.168.100.1` => `11000000.10101000.1100100.00000001`
+- Masque : `255.255.255.0` => `11111111.11111111.11111111.00000000`
+
+Ensuite, on combine les bits un par un : si les deux valent `1` alors le bit de l'adresse réseau correspondant vaudra `1`, sinon il vaudra `0`.
+
+`11000000.10101000.11001000.00000001`
+`11111111.11111111.11111111.00000000`
+				||
+				\/
+`11000000.10101000.11001000.00000000`
+=> `192.168.100.0`
+
+Si deux appareils partagent la même adresse réseau, ils appartiennent au même réseau et peuvent communiquer ensembles.
