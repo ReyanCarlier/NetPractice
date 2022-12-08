@@ -113,11 +113,11 @@ Dans un premier temps, on traduit l'adresse IP et le masque en binaire :
 
 Ensuite, on combine les bits un par un : si les deux valent `1` alors le bit de l'adresse réseau correspondant vaudra `1`, sinon il vaudra `0`.
 
-`11000000.10101000.11001000.00000001`
-`11111111.11111111.11111111.00000000`
-				||
-				\/
-`11000000.10101000.11001000.00000000`
-=> `192.168.100.0`
+`11000000.10101000.11001000.00000001`<br>
+`11111111.11111111.11111111.00000000`<br>
+				||<br>
+				\/<br>
+`11000000.10101000.11001000.00000000`<br>
+=> `192.168.100.0`<br>
 
 Si deux appareils partagent la même adresse réseau, ils appartiennent au même réseau et peuvent communiquer ensembles.
