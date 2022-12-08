@@ -67,9 +67,9 @@ Le nombre d'adresse IP utilisable par subnet est inférieure au nombre total d'I
 Exemple :
 ---------
 
-Masque : `255.255.255.252`
-Réseau : `190.3.2.252`
-Diffusion : `190.3.2.255`
+Masque : `255.255.255.252` (`/30`) (4 IP utilisables)
+Réseau : `190.3.2.252` (Réservée, première IP)
+Diffusion : `190.3.2.255` (Réservée, dernière IP)
 Adresses utilisables : `190.3.2.253` à `190.3.2.254`
 
 
