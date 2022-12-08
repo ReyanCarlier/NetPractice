@@ -67,13 +67,27 @@ Le nombre d'adresse IP utilisable par subnet est inférieure au nombre total d'I
 Exemple :
 ---------
 
-Masque : `255.255.255.252` (`/30`) (4 IP utilisables)
-
-Réseau : `190.3.2.252` (Réservée, première IP)
-
-Diffusion : `190.3.2.255` (Réservée, dernière IP)
-
+Masque : `255.255.255.252` (`/30`) (4 IP utilisables)<br>
+Réseau : `190.3.2.252` (Réservée, première IP)<br>
+Diffusion : `190.3.2.255` (Réservée, dernière IP)<br>
 Adresses utilisables : `190.3.2.253` à `190.3.2.254`
 
+Switch
+======
 
+Un switch permet de connecter deux appareils (ou plus) au même réseau.<br>
+Sa seule utilité est de distribué les données à son réseau.<br>
 
+Routeur
+=======
+
+Un routeur est une interface qui permet la communication entre deux réseaux différents.<br>
+Un routeur peut appartenir à plusieurs réseaux. (Dans notre projet, le routeur est visible en tant que `Interface`)<br>
+
+Table de routage
+================
+
+![example_router](https://github.com/tblaase/Net_Practice/blob/main/readme_additions/router_example.png)
+
+La table de routage stocke les différentes destinations de tous les réseaux auxquels appartient l'appareil.<br>
+Dans notre projet, la table de routage comprend la `destination` et le prochain noeud (`next hop`).<br>
